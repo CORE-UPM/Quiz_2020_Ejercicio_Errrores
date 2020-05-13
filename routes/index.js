@@ -100,7 +100,7 @@ if (!!process.env.QUIZ_OPEN_REGISTER) {
   router.post('/users',
       sessionController.loginRequired,
       sessionController.adminRequired,
-      userController.create);
+      userController.creat);
 }
 
 router.get('/users/:userId(\\d+)/edit',
@@ -123,7 +123,7 @@ router.get('/users/:userId(\\d+)/quizzes',
     quizController.index);
 
 // Routes for the resource /quizzes
-router.get('/quizzes',
+router.get('/quizes',
     quizController.index);
 router.get('/quizzes/:quizId(\\d+)',
     sessionController.loginRequired,

@@ -22,7 +22,7 @@
     <header class="main" id="mainHeader">
 
         <div class="right">
-            <% if (!locals.loginUser) { %>
+            <% if (!locals.loginUser) { % >
                 <a href="/login">Login</a>
             <% } else { %>
                 <a href="/users/<%= loginUser.id %>"><%= loginUser.username %></a>

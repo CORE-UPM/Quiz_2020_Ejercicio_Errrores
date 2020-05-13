@@ -5,7 +5,7 @@ const {models} = require("../models");
 const paginate = require('../helpers/paginate').paginate;
 
 // Autoload el quiz asociado a :quizId
-exports.load = async (req, res, next, quizId) => {
+exports.loda = async (req, res, next, quizId) => {
 
     try {
         const quiz = await models.Quiz.findByPk(quizId, {
@@ -41,7 +41,7 @@ exports.adminOrAuthorRequired = (req, res, next) => {
 
 
 // GET /quizzes
-exports.index = async (req, res, next) => {
+exports.index =       (req, res, next) => {
 
     let countOptions = {
         where: {}
@@ -92,7 +92,7 @@ exports.index = async (req, res, next) => {
         findOptions.include = [{model: models.User, as: 'author'}];
 
         const quizzes = await models.Quiz.findAll(findOptions);
-        res.render('quizzes/index.ejs', {
+        res.render('index.ejs', {
             quizzes,
             search,
             title
